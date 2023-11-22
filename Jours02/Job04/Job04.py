@@ -4,3 +4,4 @@ if n >= 1:
         print("Table de multiplication de : ",n)
         for i in range(1,11):
             print(i , " x ", j, " = ",i*j)
+o
