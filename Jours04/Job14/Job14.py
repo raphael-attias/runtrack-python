@@ -1,25 +1,26 @@
-def my_long_word(taille_minimale, phrase):
-    mots_plus_longs = ""
-    mot_actuel = ""
-    espace = ' '
+def compteur(p):
+    longueur = 0
+    for lettre in p:
+        longueur += 1
+    return longueur
 
-    for caractere in phrase:
-        # Si le caractère n'est pas un espace, ajoute-le au mot actuel
-        if caractere != espace:
-            mot_actuel += caractere
+
+def my_long_word(n, phrase):
+    mots_apres_n = ""
+    verifier_mot = ""
+
+    for lettre in phrase:
+        if lettre != " ":
+            verifier_mot += lettre
         else:
-            # Si le mot actuel a une longueur supérieure à la taille minimale, ajoute-le à la chaîne résultante
-            if mot_actuel and len(mot_actuel) > taille_minimale:
-                if mots_plus_longs:
-                    mots_plus_longs += ' '
-                mots_plus_longs += mot_actuel
+            if compteur(verifier_mot) > n:
+                mots_apres_n += verifier_mot + " "
+            verifier_mot = ""
+    if compteur(verifier_mot) > n:
+        mots_apres_n += verifier_mot
 
-            mot_actuel = ""
+    return mots_apres_n
 
-    # Vérifie le dernier mot après la boucle
-    if mot_actuel and len(mot_actuel) > taille_minimale:
-        if mots_plus_longs:
-            mots_plus_longs += ' '
-        mots_plus_longs += mot_actuel
+resultat = my_long_word(3, "La peur est le chemin vers le côté obscur, la peur mène à la colère, la colère mène à la haine, la haine mène à la souffrance")
 
-    return mots_plus_longs
+print(resultat)
