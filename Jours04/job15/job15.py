@@ -1,4 +1,4 @@
-def tri_bulles(arr):
+def tri(arr):
     n = 0
     for _ in arr:
         n += 1
@@ -21,7 +21,7 @@ def arrondir_et_trier_liste(liste):
             liste[i] = entier + 1
         else:
             liste[i] = entier
-    tri_bulles(liste)
+    tri(liste)
 
 
 ma_liste = [22.4, 4.0, 16.22, 9.10, 11.00, 12.22, 14.20, 5.20, 17.50]
